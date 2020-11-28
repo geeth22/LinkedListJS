@@ -65,5 +65,29 @@ class Linkedlist {
 
         }
     }
+
+    removeAt(index) {
+        if (index > 0 && index > this.size) {
+            return;
+        }
+
+        let current = this.head;
+        let previous;
+        let count = 0;
+
+        // Remove first
+        if (index === 0) {
+            this.head = current.next;
+        } else {
+            while (count < index) {
+                count++;
+                previous = current;
+                current = current.next;
+            }
+
+            previous.next = current.next;
+        }
+        this.size--;
+    }
 }
 module.exports = new Linkedlist();
