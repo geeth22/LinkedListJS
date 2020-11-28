@@ -3,7 +3,7 @@ let readlineSync = require('readline-sync');
 checkoption = function () {
     let isTerminated = true;
     while (isTerminated == true) {
-        let checkoption = readlineSync.question("\nEner your choice:\n1.firstNode\n2.lastNode\n3.insert at index\n4.print\n5.exit\n");
+        let checkoption = readlineSync.question("\nEner your choice:\n1.firstNode\n2.lastNode\n3.insert at index\n4.print\n5.remove at index\n6.exit\n");
         switch (checkoption) {
             case '1':
                 let firstPosition = readlineSync.question("Enter the element in first position: ");
@@ -21,7 +21,11 @@ checkoption = function () {
 	    case '4':
                 Utility.printListData();
                 break;
-            case '5':
+	    case '5':
+                let indexNumber = readlineSync.question("Enter the index for deletion: ");
+                Utility.removeAt(indexNumber);
+                break;
+            case '6':
                 isTerminated = false;
                 break;
             default: console.log("please enter correct option");
