@@ -56,5 +56,14 @@ class Linkedlist {
 
         this.size++;
     }
+
+    printListData() {
+        let current = this.head;
+        while (current) {
+            console.log(current.data);
+            current = current.next;
+
+        }
+    }
 }
 module.exports = new Linkedlist();
